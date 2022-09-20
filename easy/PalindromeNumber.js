@@ -25,5 +25,3 @@ const isPalindrome = (x) => {
         }
     return true
 }
-
-isPalindrome(1221)
