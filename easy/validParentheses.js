@@ -13,10 +13,8 @@ const isValid = (s) => {
     for(let bracket of s) {
         if(map[bracket]) { //Checks to see if bracket is an opening bracket (key in map)
             stack.push(map[bracket]) //Pushes closing bracket to the stack
-            console.log(stack)
         } else if(stack.length > 0 && stack[stack.length - 1] == bracket) { //If a close bracket -> stack length > 0 and the last elemnt equals a close bracket of the same type remove from end
             stack.pop()
-            console.log(stack)
         } else {
             return false
         }
