@@ -41,16 +41,18 @@
 //     }
 // }
 
-var singleNumber = function(nums) {
+var singleNumber = function(nums) { //Using bitwise operators
     let singles = 0;
     let doubles = 0;
 
     for (num of nums) {
         // Add to singles if it's not in doubles. Also remove from singles if it's in there
-        singles = (~doubles) & (singles ^ num);
+        singles = (~doubles) & (singles ^ num); //Bitwise & operator returns a 1 in each positoin where the bit of both (~doubles) & (singles ^ num) are the sane
         // Add to doubles if it's not in singles. Also remove from doubles if it's in there
         doubles = (~singles) & (doubles ^ num);
     }
 
     return singles;
 };
+
+singleNumber([0,1,0,1,0,1,99])
