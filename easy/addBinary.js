@@ -27,9 +27,10 @@ const addBinary = (a, b) => {
     //Parseint returns a integer with a base of 2 (binary) regular numbers are base 10
     sum = parseInt(a, 2) + parseInt(b, 2);
   } else {
+    //need to add the '0b' in order to parse string into bigInt
     sum = BigInt("0b" + a) + BigInt("0b" + b);
   }
   return sum.toString(2);
 };
 
-//Time complexity is o(n) since parseInt is a o(n) time complexity operation
+//Time complexity is o(n) since parseInt and toString is a o(n) time complexity operation
